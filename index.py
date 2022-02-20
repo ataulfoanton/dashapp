@@ -2,7 +2,7 @@ from dash import dcc, html, Input, Output
 import dash_bootstrap_components as dbc
 
 from app import app
-from layouts import loan_score, file_details
+from layouts import loan_score, file_details, general_performance
 import callbacks
 
 from utils.functions import *
@@ -61,6 +61,11 @@ sidebar = html.Div(
                     'File details',
                     href='/file_details',
                     active='exact'
+                ),
+                dbc.NavLink(
+                    'General performance',
+                    href='/general_performance',
+                    active='exact'
                 )
             ],
             class_name='card-header-pills',
@@ -97,6 +102,8 @@ def render_page_content(pathname):
         return loan_score    
     elif pathname == '/file_details':
         return file_details
+    elif pathname == '/general_performance':
+        return general_performance
     # If the user tries to reach a different page, return a 404 message
     return html.Div(
         dbc.Container(
