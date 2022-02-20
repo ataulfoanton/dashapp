@@ -113,3 +113,18 @@ def feature_impact(ID, X_test_prep, feature_coef):
             rangemode='tozero')
 
     return fig_pos, fig_neg
+
+
+def train_density_with_central_tendencies_by_target(feat, X_train):
+    fig = {}
+
+    if feat:
+        fig = px.histogram(
+            X_train,
+            x=feat,
+            color='TARGET',
+            marginal='box',
+            title='General performance'
+        )
+        
+    return fig
