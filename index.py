@@ -1,7 +1,7 @@
 from dash import dcc, html, Input, Output
 import dash_bootstrap_components as dbc
 
-from app import app, server
+from app import app
 from layouts import loan_score, file_details
 import callbacks
 
